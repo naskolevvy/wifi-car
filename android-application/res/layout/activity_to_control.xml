@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.helper.robot.homebot.ToControl">
+
+    <Switch
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp"
+        android:layout_below="@+id/cameraimage" />
+
+    <Switch
+        android:id="@+id/lights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/lightsimage"
+        android:layout_below="@+id/lightsimage" />
+
+    <com.helper.robot.homebot.JoyStick
+        android:id="@+id/joystick"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true" />
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/joystick"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/home"
+        android:layout_toStartOf="@+id/joystick" />
+
+    <ImageView
+        android:id="@+id/cameraimage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="8dp"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <ImageButton
+        android:id="@+id/UP"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/DOWN"
+        android:layout_alignStart="@+id/DOWN"
+        android:src="@android:drawable/arrow_up_float" />
+
+    <ImageButton
+        android:id="@+id/DOWN"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/detailsLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/details"
+        android:layout_alignBottom="@+id/details"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/grab_release"
+        android:text="Details:" />
+
+    <ImageButton
+        android:id="@+id/question"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/home"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/question" />
+
+    <ImageButton
+        android:id="@+id/grab_release"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/UP"
+        android:layout_toEndOf="@+id/DOWN"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/grab" />
+
+    <ImageButton
+        android:id="@+id/swap"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_below="@+id/question"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/arm3" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/youtube_player"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home" />
+
+    <TextView
+        android:id="@+id/commandLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/identificationKeyLabel"
+        android:layout_below="@+id/identificationKeyLabel"
+        android:text="Command Send:" />
+
+    <TextView
+        android:id="@+id/identificationKeyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/batteryLevelLabel"
+        android:layout_below="@+id/batteryLevelLabel"
+        android:text="Identification Key:" />
+
+    <TextView
+        android:id="@+id/carNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/detailsLable"
+        android:layout_below="@+id/youtube_player"
+        android:text="Name of Car: :  " />
+
+    <TextView
+        android:id="@+id/batteryLevelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/carNameLabel"
+        android:layout_below="@+id/carNameLabel"
+        android:text="Battery Level:  " />
+
+    <TextView
+        android:id="@+id/identification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/identificationKeyLabel"
+        android:layout_toEndOf="@+id/identificationKeyLabel" />
+
+    <TextView
+        android:id="@+id/command"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/identificationKeyLabel"
+        android:layout_toEndOf="@+id/commandLable" />
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/commandLable"
+        android:layout_toEndOf="@+id/detailsLable" />
+
+    <ImageView
+        android:id="@+id/lightsimage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/camera"
+        android:layout_below="@+id/camera"
+        android:src="@drawable/light4" />
+
+    <TextView
+        android:id="@+id/nameOfCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/youtube_player"
+        android:layout_toEndOf="@+id/carNameLabel" />
+
+    <TextView
+        android:id="@+id/batteryLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/carNameLabel"
+        android:layout_toEndOf="@+id/batteryLevelLabel" />
+
+</RelativeLayout>
